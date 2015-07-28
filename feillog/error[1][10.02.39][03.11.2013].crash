@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 1412, in <module>
+    lytic()
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 1352, in lytic
+    AUTHENT = JCON.auth(USERNAME, PASSWORD, RESOURCE)
+  File "modules/xmpp/client.py", line 225, in auth
+    while self.SASL.startsasl=='in-process' and self.Process(1): pass
+  File "modules/xmpp/dispatcher.py", line 303, in dispatch
+    handler['func'](session,stanza)
+  File "modules/xmpp/dispatcher.py", line 215, in streamErrorHandler
+    raise exc((name,text))
+SystemShutdown: (u'system-shutdown', '')

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/psp/bot/blacksmith/BlackSmith.py", line 1412, in <module>
+    lytic()
+  File "/home/psp/bot/blacksmith/BlackSmith.py", line 1342, in lytic
+    CONNECT = JCON.connect(server = (SERVER, PORT), secure = 0, use_srv = True)
+  File "modules/xmpp/client.py", line 200, in connect
+    if not CommonClient.connect(self,server,proxy,secure,use_srv) or secure<>None and not secure: return self.connected
+  File "modules/xmpp/client.py", line 172, in connect
+    sock.PlugOut()
+  File "modules/xmpp/client.py", line 79, in PlugOut
+    if self.__class__.__dict__.has_key('plugout'): ret = self.plugout()
+  File "modules/xmpp/transports.py", line 160, in plugout
+    self._sock.close()
+AttributeError: TCPsocket instance has no attribute '_sock'

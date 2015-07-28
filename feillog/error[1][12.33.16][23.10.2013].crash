@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 508, in execute_command_handler
+    commnad_handler(type, source, body)
+  File "plugins/navalny_plugin.py", line 58, in navalny_handler
+    THEMES = get_themes()
+  File "plugins/navalny_plugin.py", line 42, in get_themes
+    b1 = target[od.end():]
+AttributeError: 'NoneType' object has no attribute 'end'

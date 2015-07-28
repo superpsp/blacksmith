@@ -1,0 +1,1 @@
+{'fly': {'cond': 1, 'mode': 'ban', 'time': 60}, 'like': 0, 'excess': {'cond': 0, 'mode': 'kick'}, 'kicks': {'cnt': 10, 'cond': 0}, 'len': 1, 'caps': 1, 'presence': 1, 'time': 1, 'obscene': 1, 'prsstlen': 1}

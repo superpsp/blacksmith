@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 508, in execute_command_handler
+    commnad_handler(type, source, body)
+  File "plugins/ya_plugin.py", line 21, in handler_yandex
+    message = target[od.end():]
+AttributeError: 'NoneType' object has no attribute 'end'

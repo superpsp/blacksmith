@@ -1,0 +1,1 @@
+{u'realvirt@conference.jabber.ru/\u0421\u0442\u0435\u0440\u0432\u0430.': {'words': 102, 'lastnick': u'\u0421\u0442\u0435\u0440\u0432\u0430.', 'msgs': 3}, u'realvirt@conference.jabber.ru/SteRveLa': {'words': 1, 'lastnick': u'SteRveLa', 'msgs': 1}}

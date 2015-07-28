@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 508, in execute_command_handler
+    commnad_handler(type, source, body)
+  File "plugins/news_plugin.py", line 82, in get_l_n
+    NEWS = get_last_news()
+  File "plugins/news_plugin.py", line 59, in get_last_news
+    r = urllib.urlopen('http://news.yandex.ru.sixxs.org/')
+  File "/usr/lib/python2.7/urllib.py", line 86, in urlopen
+    return opener.open(url)
+  File "/usr/lib/python2.7/urllib.py", line 207, in open
+    return getattr(self, name)(url)
+  File "/usr/lib/python2.7/urllib.py", line 344, in open_http
+    h.endheaders(data)
+  File "/usr/lib/python2.7/httplib.py", line 958, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 818, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 780, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 761, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+IOError: [Errno socket error] [Errno 101] Network is unreachable

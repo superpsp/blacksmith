@@ -1,0 +1,92 @@
+#===istalismanplugin===
+# -*- coding: utf-8 -*-
+
+
+MAFIA_REMOTE={}
+
+#RBOT=u'mafia_bot@talkonaut.com'
+RBOT=u'mafia_bot@jabnet.ru'
+
+def hnd_botremotemaf(con, raw):
+    try:
+	body=raw.getBody()
+	fromjid=raw.getFrom()
+	groupchat = fromjid.getStripped()
+	nick = fromjid.getResource()
+	if body!=u'[no text]':
+	    return
+	id=raw.getID()
+#	jid=get_true_jid(groupchat+'/'+nick)
+	jid=handler_jid(groupchat+'/'+nick)
+	if jid!=RBOT:
+	    return
+	p=raw.getTagData('x')
+	z=raw.getChildren()
+	for x in z:
+	    ns=x.getNamespace()
+	    sp=ns.split(':')
+	    jj=sp[0]
+	    if sp[0] in MAFIA_REMOTE.keys():
+		jj=MAFIA_REMOTE[sp[0]]
+		msg(jj, p)
+    except:
+	pass
+
+		    
+def mr_send(jid, x, id, ns):
+    msg=xmpp.Message(jid,u'[no text]','chat')
+    msg.setID(id)
+    m=msg.setTag('x',namespace=ns)
+    m.setData(x)
+    try:
+	JCON.send(msg)
+    except:
+	pass
+
+def mf_remote_proc():
+    JCON.RegisterHandler('message', hnd_botremotemaf)
+
+def mafremote_register(type, source, parameters):
+    global MAFIA_REMOTE
+    jid=handler_jid(source[1]+'/'+source[2])
+    if source[1] in GROUPCHATS.keys():
+        nick=source[2]
+    if parameters==u'0':
+	if jid in MAFIA_REMOTE.keys():
+	    del MAFIA_REMOTE[jid]
+	    mr_send(RBOT,'1','off',jid+':x:public'+nick)
+	    reply(type, source, u'Вы вышли из игры!')
+	    return
+#    jid=get_true_jid(source[1]+'/'+source[2])
+    if jid in MAFIA_REMOTE.keys():
+	reply(type, source, u'Вы внастоящее время в игре - для выхода наберите .мафия 0')
+	return
+    MAFIA_REMOTE[jid]=source[1]+'/'+source[2]
+    mr_send(RBOT,'1234','1',jid+':x:'+nick)
+
+def mremote_msg(raw, type, source, parameters):
+    if parameters.lower() in COMMANDS.keys() or type!='private':
+	return
+    if parameters.count(' '):
+	s=parameters.split()
+	if s[0].lower() in COMMANDS.keys():
+	    return
+#    jid=get_true_jid(source[1]+'/'+source[2])
+    jid=handler_jid(source[1]+'/'+source[2])
+    t='public'
+    if jid in MAFIA_REMOTE.keys():
+	mr_send(RBOT, parameters, random.randrange(0,222), jid+':x:'+t)
+
+def mfremote_leave(groupchat, nick, nw, nr):
+#    jid=get_true_jid(groupchat+'/'+nick)
+    jid=handler_jid(groupchat+'/'+nick)
+    if jid in MAFIA_REMOTE.keys():
+	if MAFIA_REMOTE[jid]==groupchat+'/'+nick:
+	    del MAFIA_REMOTE[jid]
+	    mr_send(RBOT,'1','off',jid+':x:public'+nick)
+
+
+register_leave_handler(mfremote_leave)        
+register_message_handler(mremote_msg)
+register_stage0_init(mf_remote_proc)    
+register_command_handler(mafremote_register, '.мафия', ['все','игры'], 10, 'Игра мафия, ключ 0 чтобы выйти', '.мафия', ['.мафия'])

@@ -1,0 +1,1 @@
+{'amoder': [u'baloo@xmpp.kz'], 'avisitor': [], 'akick': []}

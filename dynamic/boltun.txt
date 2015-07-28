@@ -1,0 +1,1 @@
+{'FRAZA_RANDOM': ['What the fuck!?', 'How are you?'], 'FRAZA_BOT': {}, 'FRAZA_USER': {}, 'FRAZA_ALL': {}}

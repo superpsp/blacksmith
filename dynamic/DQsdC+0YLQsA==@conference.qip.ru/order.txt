@@ -1,0 +1,1 @@
+{'presence': 1, 'obscene': 0, 'caps': 0, 'len': 1, 'excess': {'cond': 0, 'mode': 'kick'}, 'kicks': {'cnt': 10, 'cond': 0}, 'fly': {'cond': 1, 'mode': 'ban', 'time': 60}, 'like': 0, 'idle': {'cond': 0, 'time': 3600}, 'prsstlen': 1, 'time': 1}

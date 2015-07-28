@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 508, in execute_command_handler
+    commnad_handler(type, source, body)
+  File "plugins/macrokill_plugin.py", line 16, in handler_set_botnick
+    save_conflist(source[1], nick)
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 625, in save_conflist
+    list = eval(read_file(GROUPCHATS_FILE))
+  File "<string>", line 0
+    
+   ^
+SyntaxError: unexpected EOF while parsing

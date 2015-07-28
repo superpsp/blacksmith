@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/bot/blacksmith/BlackSmith.py", line 508, in execute_command_handler
+    commnad_handler(type, source, body)
+  File "plugins/antispamer_plugin.py", line 49, in handler_antispamer
+    state = SPAMSERVINFO['banned'][source[1]]
+KeyError: u'pspsuperpsp@qip.ru'

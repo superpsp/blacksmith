@@ -1,0 +1,1 @@
+{'amoder': [], 'avisitor': [u'smirnoff1986@jabber.ru/BombusMod'], 'akick': [u'pupkinson@jabber.ru']}

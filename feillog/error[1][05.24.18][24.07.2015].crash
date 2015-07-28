@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/var/lib/openshift/55ae105d50044686c10000f5/python/bot/blacksmith/BlackSmith.py", line 508, in execute_command_handler
+    commnad_handler(type, source, body)
+  File "plugins/weather_plugin.py", line 29, in weather_gis_search
+    while parameters[-1] in ['.', '*']:
+IndexError: string index out of range
