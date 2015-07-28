@@ -1401,7 +1401,7 @@ def lytic():
 		except:
 			Dispatch_fail()
 			INFO['errs'] += 1
-			if INFO['errs'] >= 7:
+			if INFO['errs'] >= 10:
 				CAN_LIVE = False
 #				CAN_LIVE = True
 	sys_exit('Dispatch Errors')
